@@ -9,6 +9,9 @@ https://www.tradingview.com/chart/
 # Clone this repository
 git clone https://github.com/alderie/TradingviewDesktop
 
+# Download electron
+npm install
+
 # Enter folder
 cd TradingviewDesktop
 
