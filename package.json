@@ -1,0 +1,12 @@
+{
+  "name": "TradingviewDesktop",
+  "version": "1.0.0",
+  "description": "A desktop version of the TradeView graph implemented in electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^7.1.2"
+  }
+}
