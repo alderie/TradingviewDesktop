@@ -1,7 +1,6 @@
 // All of the Node.js APIs are available in the preload process.
 // It has the same sandbox as a Chrome extension.
-const remote = require('electron').remote
-let w = remote.getCurrentWindow()
+const remote = require('electron').remote;
 
 
 let waitUntilExists = (selector, callback) => {
@@ -20,6 +19,7 @@ let waitUntilExists = (selector, callback) => {
 
 
 window.addEventListener('DOMContentLoaded', () => {
+
   const header = () => {
     let cont = document.createElement('div');
     cont.textContent = "world";
@@ -112,18 +112,21 @@ window.addEventListener('DOMContentLoaded', () => {
   let maximize = maximizeButton();
 
   close.addEventListener('click', ()=> {
-    w.close();
+    var window = remote.getCurrentWindow();
+    window.close();
   });
 
   minimize.addEventListener('click', ()=> {
-    w.minimize();
+    var window = remote.getCurrentWindow();
+    window.maximize();
   });
 
   maximize.addEventListener('click', ()=>{
-    if(w.isMaximized())
-      w.unmaximize();
+    var window = remote.getCurrentWindow();
+    if(window.isMaximized())
+      window.unmaximize();
     else
-      w.maximize();
+      window.maximize();
   });
   
   header();
