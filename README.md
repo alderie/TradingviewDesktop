@@ -2,6 +2,10 @@
 TradingView Desktop version built in electron
 https://www.tradingview.com/chart/
 
+# Preview
+
+![Tradeview image preview](https://raw.githubusercontent.com/alderie/TradingviewDesktop/master/preview.PNG)
+
 # To build a version of the electron app
 
 ```batch
