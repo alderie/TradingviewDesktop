@@ -4,4 +4,4 @@ https://www.tradingview.com/chart/
 
 
 ## Notice
-I am not affiliated with TradingView nor is this repository. I also did not produce the graphing api. 
+I am not affiliated with TradingView. I also did not produce the graphing api. 
