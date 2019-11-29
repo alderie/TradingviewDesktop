@@ -4,7 +4,8 @@
   "description": "A desktop version of the TradeView graph implemented in electron",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "npx electron-builder build"
   },
   "devDependencies": {
     "electron": "^7.1.2"
