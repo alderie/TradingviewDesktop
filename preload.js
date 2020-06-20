@@ -3,32 +3,21 @@
 const remote = require('electron').remote;
 
 
-let waitUntilExists = (selector, callback) => {
-  let wait = () => {
-    setTimeout(() => {
-      if (document.querySelectorAll(selector).length == 0) {
-        wait()
-      } else {
-        callback();
-      }
-    }, 100)
-  }
-  wait();
-}
-
-
-
 window.addEventListener('DOMContentLoaded', () => {
 
   const header = () => {
 
+    // Create header drag region
     let cont = document.createElement('div');
     cont.textContent = "";
     cont.classList.add('header-controls');
     cont.innerHTML = `<div class='drag-region'></div><div id='controls-electron'></div>`;
+    
+    // Append to html of page
     let parent = document.querySelector('.chart-page.unselectable');
     parent.prepend(cont);
 
+    //Styling
     let style = document.createElement('style');
     style.innerHTML = `.js-rootresizer__contents {height: 95%} .header-controls {background-color:transparent; width:100vw; height:40px; display:flex; flex-flow:row;} .drag-region {flex-grow:1; height:40px; -webkit-app-region: drag;} #controls-electron { margin-left:auto; display:flex;} .electron-control {width:40px !important} .electron-control:hover {background-color:rgba(0,0,0,0.2);} `
 
@@ -130,6 +119,8 @@ window.addEventListener('DOMContentLoaded', () => {
       window.maximize();
   });
   
+
+  // Add all components to the page
   header();
 
   document.querySelector('#controls-electron').append(minimize);
