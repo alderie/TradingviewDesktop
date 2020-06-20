@@ -21,8 +21,9 @@ let waitUntilExists = (selector, callback) => {
 window.addEventListener('DOMContentLoaded', () => {
 
   const header = () => {
+
     let cont = document.createElement('div');
-    cont.textContent = "world";
+    cont.textContent = "";
     cont.classList.add('header-controls');
     cont.innerHTML = `<div class='drag-region'></div><div id='controls-electron'></div>`;
     let parent = document.querySelector('.chart-page.unselectable');
@@ -118,7 +119,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   minimize.addEventListener('click', ()=> {
     var window = remote.getCurrentWindow();
-    window.maximize();
+    window.minimize();
   });
 
   maximize.addEventListener('click', ()=>{
@@ -130,11 +131,10 @@ window.addEventListener('DOMContentLoaded', () => {
   });
   
   header();
-  waitUntilExists('.toolbar-1A0PjTA7-', () => {
-    document.querySelector('#controls-electron').append(minimize);
-    document.querySelector('#controls-electron').append(maximize);
-    document.querySelector('#controls-electron').append(close);
-  });
+
+  document.querySelector('#controls-electron').append(minimize);
+  document.querySelector('#controls-electron').append(maximize);
+  document.querySelector('#controls-electron').append(close);
 
   
 
